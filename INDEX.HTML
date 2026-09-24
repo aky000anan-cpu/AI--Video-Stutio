@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Video Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        <span>✦</span> AI Video Studio
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#create">Create</a>
+        <a href="#characters">Characters</a>
+        <a href="#features">Features</a>
+    </nav>
+
+    <button class="login-btn">Login</button>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ✨ AI Powered Video Creation
+        </div>
+
+        <h1>
+            Create Amazing
+            <span>AI Videos</span>
+            Easily
+        </h1>
+
+        <p>
+            Write your idea, create characters, generate scenes
+            and turn your imagination into professional videos.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-btn"
+                    onclick="openCreator()">
+                🎬 Create Video
+            </button>
+
+            <button class="secondary-btn"
+                    onclick="scrollToPrompt()">
+                ✨ AI Prompt
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="hero-card">
+
+        <div class="video-preview">
+
+            <div class="play-button">▶</div>
+
+            <p>AI Video Preview</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CREATE -->
+
+<section class="creator" id="create">
+
+    <div class="section-title">
+
+        <span>CREATE</span>
+
+        <h2>Turn Your Idea Into Video</h2>
+
+        <p>
+            Describe your video and let AI help you create it.
+        </p>
+
+    </div>
+
+
+    <div class="creator-box">
+
+        <div class="input-area">
+
+            <label>Describe your video</label>
+
+            <textarea
+                id="prompt"
+                placeholder="Example: Create a funny cartoon video of two friends studying in a computer class..."></textarea>
+
+
+            <div class="options">
+
+                <div>
+                    <label>Video Style</label>
+
+                    <select id="style">
+
+                        <option>3D Cartoon</option>
+                        <option>2D Cartoon</option>
+                        <option>Anime</option>
+                        <option>Realistic</option>
+                        <option>Cinematic</option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>Aspect Ratio</label>
+
+                    <select id="ratio">
+
+                        <option>9:16</option>
+                        <option>16:9</option>
+                        <option>1:1</option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>Duration</label>
+
+                    <select id="duration">
+
+                        <option>10 Seconds</option>
+                        <option>20 Seconds</option>
+                        <option>30 Seconds</option>
+                        <option>60 Seconds</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="buttons">
+
+                <button class="ai-btn"
+                        onclick="generatePrompt()">
+
+                    ✨ Generate AI Prompt
+
+                </button>
+
+
+                <button class="generate-btn"
+                        onclick="generateVideo()">
+
+                    🎬 Generate Video
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="preview-area">
+
+            <h3>Video Preview</h3>
+
+            <div class="preview">
+
+                <div class="preview-icon">🎥</div>
+
+                <p>Your generated video will appear here</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- AI PROMPT -->
+
+<section class="prompt-section">
+
+    <div class="section-title">
+
+        <span>AI PROMPT</span>
+
+        <h2>Smart Prompt Generator</h2>
+
+    </div>
+
+
+    <div class="prompt-box">
+
+        <textarea
+            id="generatedPrompt"
+            placeholder="Your AI generated prompt will appear here..."></textarea>
+
+        <button onclick="copyPrompt()">
+            📋 Copy Prompt
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- CHARACTERS -->
+
+<section class="characters" id="characters">
+
+    <div class="section-title">
+
+        <span>CHARACTER STUDIO</span>
+
+        <h2>Create Your Characters</h2>
+
+        <p>
+            Design unique characters for your stories and videos.
+        </p>
+
+    </div>
+
+
+    <div class="character-grid">
+
+        <div class="character-card">
+
+            <div class="character-icon">👨‍💻</div>
+
+            <h3>AI Student</h3>
+
+            <p>Smart computer student character</p>
+
+            <button onclick="useCharacter('AI Student')">
+                Use Character
+            </button>
+
+        </div>
+
+
+        <div class="character-card">
+
+            <div class="character-icon">👩‍🏫</div>
+
+            <h3>AI Teacher</h3>
+
+            <p>Professional computer teacher</p>
+
+            <button onclick="useCharacter('AI Teacher')">
+                Use Character
+            </button>
+
+        </div>
+
+
+        <div class="character-card">
+
+            <div class="character-icon">🦸</div>
+
+            <h3>Super Hero</h3>
+
+            <p>Creative cartoon superhero</p>
+
+            <button onclick="useCharacter('Super Hero')">
+                Use Character
+            </button>
+
+        </div>
+
+
+        <div class="character-card create-character">
+
+            <div class="character-icon">＋</div>
+
+            <h3>Create New</h3>
+
+            <p>Generate your own AI character</p>
+
+            <button onclick="createCharacter()">
+                Create Character
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features" id="features">
+
+    <div class="section-title">
+
+        <span>FEATURES</span>
+
+        <h2>Everything You Need</h2>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <div class="feature">
+            <span>🎬</span>
+            <h3>Text to Video</h3>
+            <p>Turn your written idea into an AI video.</p>
+        </div>
+
+
+        <div class="feature">
+            <span>🎨</span>
+            <h3>Cartoon Maker</h3>
+            <p>Create unique cartoon characters and scenes.</p>
+        </div>
+
+
+        <div class="feature">
+            <span>🖼️</span>
+            <h3>Image to Video</h3>
+            <p>Animate your images with AI.</p>
+        </div>
+
+
+        <div class="feature">
+            <span>🎙️</span>
+            <h3>AI Voice</h3>
+            <p>Create voiceovers and character dialogues.</p>
+        </div>
+
+
+        <div class="feature">
+            <span>🎞️</span>
+            <h3>Scene Maker</h3>
+            <p>Create your story scene by scene.</p>
+        </div>
+
+
+        <div class="feature">
+            <span>⚡</span>
+            <h3>Fast Generation</h3>
+            <p>Generate your creative projects quickly.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="logo">
+        ✦ AI Video Studio
+    </div>
+
+    <p>
+        Create. Imagine. Generate.
+    </p>
+
+    <p class="copyright">
+        © 2026 AI Video Studio
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+</body>
+</html>
