@@ -169,3 +169,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+// Anand Digital Contact Number
+const PHONE_NUMBER = "7307397267";
+const WHATSAPP_NUMBER = "917307397267";
